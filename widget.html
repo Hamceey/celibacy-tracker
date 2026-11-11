@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reset Widget</title>
+<style>
+:root{--bg:#121a28;--line:#2a3548;--text:#eef1f6;--mute:#8d99ad;--green:#3f9d6b;--seg:#252e3d}
+*{box-sizing:border-box}
+body{margin:0;height:100vh;background:var(--bg);color:var(--text);font-family:system-ui,sans-serif;overflow:hidden;user-select:none}
+.card{position:relative;height:100%;padding:12px 14px;cursor:pointer;display:flex;flex-direction:column;justify-content:center;gap:8px}
+.t{margin:0;font-size:.72rem;letter-spacing:.06em;color:var(--mute);padding-right:26px}
+.row{display:flex;justify-content:space-between;align-items:baseline}
+.day{font-size:1.5rem;font-weight:700}
+.rem{font-size:.8rem;color:var(--mute)}
+.bar{display:flex;gap:2px;height:6px}
+.bar i{flex:1;background:var(--seg);border-radius:99px}
+.bar i.on{background:var(--green)}
+.bar.solid{display:block;background:var(--seg);border-radius:99px}
+.bar.solid i{display:block;height:100%;background:var(--green)}
+.min{position:absolute;top:6px;right:8px;width:24px;height:24px;border:1px solid var(--line);border-radius:50%;background:transparent;color:var(--text);cursor:pointer;line-height:1;padding:0}
+.min:hover{border-color:var(--mute)}
+.pill{display:none;width:100%;height:100%;border:0;background:var(--bg);color:var(--text);font:700 1.3rem system-ui,sans-serif;cursor:pointer}
+body[data-mode=min] .card{display:none}
+body[data-mode=min] .pill{display:block}
+</style>
+</head>
+<body data-mode="open">
+<div class="card" id="card" role="button" tabindex="0" title="Open full tracker">
+  <button class="min" id="min" title="Minimize">–</button>
+  <p class="t">30-DAY RESET · CELIBACY TRACKER</p>
+  <div class="row"><span class="day" id="day"></span><span class="rem" id="rem"></span></div>
+  <div class="bar" id="bar"></div>
+</div>
+<button class="pill" id="pill" title="Expand"></button>
+<script src="widget.js"></script>
+</body>
+</html>

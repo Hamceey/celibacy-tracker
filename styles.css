@@ -1,0 +1,46 @@
+:root{--bg1:#0b0f17;--bg2:#121a28;--card:#161f2e;--line:#2a3548;--text:#eef1f6;--mute:#8d99ad;--green:#3f9d6b;--greenbg:rgba(63,157,107,.14);--seg:#252e3d}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:linear-gradient(160deg,var(--bg1),var(--bg2));color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.45}
+.wrap{max-width:760px;margin:0 auto;padding:32px 16px 64px}
+header{margin-bottom:20px}
+.eyebrow,.label{font-size:.72rem;letter-spacing:.12em;color:var(--mute);margin:0 0 6px}
+h1{margin:0;font-size:2rem}
+h2{margin:0 0 6px;font-size:1.1rem}
+.sub{margin:6px 0 0;color:var(--mute)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:16px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.counter{margin:0;font-size:2.6rem;font-weight:700}
+.badge{border:1px solid var(--green);color:var(--green);background:var(--greenbg);border-radius:999px;padding:4px 12px;font-size:.75rem;letter-spacing:.08em}
+.badge.done{background:var(--green);color:#08130d}
+.bar{display:flex;gap:4px;margin:14px 0 10px;height:8px}
+.bar i{flex:1;background:var(--seg);border-radius:99px}
+.bar i.on{background:var(--green)}
+.bar.solid{background:var(--seg);border-radius:99px;display:block}
+.bar.solid i{display:block;height:100%;background:var(--green)}
+.meta{color:var(--mute);font-size:.85rem}
+.muted{color:var(--mute);margin:0 0 12px}
+.small{font-size:.8rem;margin:10px 0 0;min-height:1em}
+.checks,.history{list-style:none;margin:0;padding:0}
+.checks li{margin-bottom:8px}
+.checks label,.detail label{display:flex;align-items:center;gap:12px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;cursor:pointer}
+.checks label.on,.detail label.on{background:var(--greenbg);border-color:var(--green)}
+input[type=checkbox]{appearance:none;width:22px;height:22px;border-radius:50%;border:2px solid var(--mute);display:grid;place-content:center;margin:0;flex:none}
+input[type=checkbox]:checked{background:var(--green);border-color:var(--green)}
+input[type=checkbox]:checked::after{content:"";width:5px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+input[type=checkbox]:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+button{background:transparent;color:var(--text);border:1px solid var(--line);border-radius:999px;padding:10px 18px;font:inherit;cursor:pointer}
+button:hover{border-color:var(--mute)}
+button.primary{background:var(--green);border-color:var(--green);color:#08130d;font-weight:600}
+.fields{display:flex;flex-wrap:wrap;gap:16px;margin-top:10px}
+.fields label{display:flex;flex-direction:column;gap:6px;color:var(--mute);font-size:.85rem;flex:1;min-width:180px}
+input[type=date],input[type=number]{background:var(--bg1);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:10px;font:inherit;color-scheme:dark}
+.history li button{width:100%;display:flex;justify-content:space-between;gap:10px;border-radius:12px;margin-bottom:8px;text-align:left}
+.history li button.sel{border-color:var(--green);background:var(--greenbg)}
+.tag{color:var(--green)}
+.detail{margin-top:12px}
+.detail label{cursor:default;margin-bottom:8px}
+@media(max-width:520px){.counter{font-size:2.1rem}}
+@media(max-width:520px){.wrap{padding:12px 10px 32px}.card{padding:14px;border-radius:14px;margin-bottom:10px}h1{font-size:1.5rem}header{margin-bottom:12px}.checks label{padding:8px 10px}button{padding:8px 14px}}
+.bar:not(.solid) i{cursor:pointer}
+.bar:not(.solid) i:hover{filter:brightness(1.4)}

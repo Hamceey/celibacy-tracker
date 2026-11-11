@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>30-Day Reset</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="wrap">
+  <header>
+    <p class="eyebrow">PERSONAL DISCIPLINE PROJECT</p>
+    <h1 id="title">30-Day Reset</h1>
+    <p class="sub">Celibacy tracker · daily commitments · progress</p>
+  </header>
+
+  <section class="card" id="progress-card">
+    <div class="row">
+      <div>
+        <p class="label">CURRENT DAY</p>
+        <p class="counter" id="counter">1 / 30</p>
+      </div>
+      <span class="badge" id="status">IN PROGRESS</span>
+    </div>
+    <div class="bar" id="bar" role="progressbar" aria-label="Reset progress"></div>
+    <div class="row meta">
+      <span id="percent">0% elapsed</span>
+      <span id="remaining">30 days remaining</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Today's commitments</h2>
+    <p class="muted">Tick each item when completed. Your checklist resets at the start of a new day.</p>
+    <ul class="checks" id="checks"></ul>
+    <div class="btns">
+      <button class="primary" id="save">Save today's check-in</button>
+      <button id="clear">Clear today's checklist</button>
+    </div>
+    <p class="muted small" id="save-msg" aria-live="polite"></p>
+  </section>
+
+  <section class="card">
+    <h2>Reset settings</h2>
+    <div class="fields">
+      <label>Start date<input type="date" id="start"></label>
+      <label>Target length (days)<input type="number" id="target" min="1" max="3650"></label>
+    </div>
+    <div class="btns">
+      <button class="primary" id="apply">Apply settings</button>
+      <button id="newreset">Start a new reset</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Daily history</h2>
+    <ul class="history" id="history"></ul>
+    <div id="detail" class="detail" hidden></div>
+  </section>
+
+  <section class="card">
+    <h2>Backup</h2>
+    <div class="btns">
+      <button id="export">Export backup</button>
+      <button id="import">Import backup</button>
+      <input type="file" id="file" accept="application/json,.json" hidden>
+    </div>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
